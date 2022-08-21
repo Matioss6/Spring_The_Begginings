@@ -8,9 +8,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class PC {
 
+
+    private final HDD hdd;
+
     @Autowired
-    @Qualifier("Sandisc")
-    private HDD hdd;
+    PC (HDD hdd){
+        this.hdd = hdd;
+    }
 
     public void printHDD()
     {
@@ -20,4 +24,6 @@ public class PC {
     public HDD getHdd() {
         return hdd;
     }
+
+
 }

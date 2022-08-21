@@ -1,10 +1,12 @@
 package com.matios;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
 @Qualifier("Toshiba")
+@Primary
 public class Toshiba extends HDD{
 
     Toshiba(){

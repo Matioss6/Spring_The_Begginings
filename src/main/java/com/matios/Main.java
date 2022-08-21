@@ -8,11 +8,12 @@ public class Main {
     public static void main(String[] args) {
 
         var context =  new AnnotationConfigApplicationContext(ProjectConfig.class);
-        var PC = context.getBean(PC.class);
+        var PC1 = context.getBean("pc1",PC.class);
+        var PC2 = context.getBean("pc2",PC.class);
 
 
-        PC.printHDD();
-        System.out.println(PC.getHdd());
+        PC1.printHDD();
+        PC2.printHDD();
 
 
 
