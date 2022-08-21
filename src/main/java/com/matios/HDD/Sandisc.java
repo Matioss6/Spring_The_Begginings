@@ -1,4 +1,4 @@
-package com.matios;
+package com.matios.HDD;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ public class Sandisc extends HDD{
 
     @Override
     public String toString() {
-        return "Sandisc{} - " +this.getCapacity();
+        return "Sandisc - " +this.getCapacity();
     }
 
 }

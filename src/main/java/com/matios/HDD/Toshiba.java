@@ -1,4 +1,4 @@
-package com.matios;
+package com.matios.HDD;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
@@ -16,6 +16,6 @@ public class Toshiba extends HDD{
 
     @Override
     public String toString() {
-        return "Toshiba{} - " +this.getCapacity();
+        return "Toshiba - " +this.getCapacity();
     }
 }

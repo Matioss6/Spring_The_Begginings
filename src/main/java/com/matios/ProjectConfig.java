@@ -1,6 +1,6 @@
 package com.matios;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.matios.HDD.HDD;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,20 +10,40 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "com.matios")
 public class ProjectConfig {
 
+    @Bean
+    @Qualifier("Radeon")
+    public Radeon radeon()
+    {
+        var r = new Radeon();
+        return r;
+    }
 
     @Bean
-    PC pc1(@Qualifier("Sandisc") HDD t){
+    @Qualifier("GeForcec")
+    public GeForce geForce()
+    {
+        var r = new GeForce();
+        return r;
+    }
 
-        PC pc = new PC(t);
+
+
+    @Bean
+    public PC pc1(@Qualifier("Sandisc") HDD h, @Qualifier("Radeon") GraphicCard g){
+
+        PC pc = new PC(h,g);
         return pc;
     }
 
     @Bean
-    PC pc2(@Qualifier("Toshiba") HDD t){
+    public PC pc2(@Qualifier("Toshiba") HDD h, @Qualifier("GeForcec") GraphicCard g){
 
-        PC pc = new PC(t);
+        PC pc = new PC(h,g);
         return pc;
     }
+
+
+
 
 
 

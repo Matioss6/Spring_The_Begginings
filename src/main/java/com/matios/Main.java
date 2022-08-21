@@ -12,8 +12,8 @@ public class Main {
         var PC2 = context.getBean("pc2",PC.class);
 
 
-        PC1.printHDD();
-        PC2.printHDD();
+        System.out.println(PC1);
+        System.out.println(PC2);
 
 
 

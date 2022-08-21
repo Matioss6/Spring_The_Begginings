@@ -1,29 +1,24 @@
 package com.matios;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+import com.matios.HDD.HDD;
 
-@Component
 public class PC {
 
 
     private final HDD hdd;
+    private final GraphicCard graphicCard;
 
-    @Autowired
-    PC (HDD hdd){
+    PC (HDD hdd, GraphicCard graphicCard){
         this.hdd = hdd;
-    }
-
-    public void printHDD()
-    {
-        System.out.println(hdd);
-    }
-
-    public HDD getHdd() {
-        return hdd;
+        this.graphicCard = graphicCard;
     }
 
 
+    @Override
+    public String toString() {
+        return "This PC contains " +
+                "{  hdd=" + hdd +" }  AND " + "  { GraphicCard=" +
+                graphicCard +" }";
+    }
 }
